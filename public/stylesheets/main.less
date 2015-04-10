@@ -1,0 +1,42 @@
+@less-bootstrap-path: "../../bower_components/bootstrap/less";
+@less-font-awesome-path: "../../bower_components/font-awesome/less";
+
+// Import 3rd-party libraries
+@import "@{less-bootstrap-path}/bootstrap.less";
+@import "@{less-font-awesome-path}/font-awesome.less";
+//@import "animation/animate.less";
+
+@grid-float-breakpoint: @screen-md-min;
+
+// Override Bootstrap Fonts Path
+//@icon-font-path: "/fonts/";
+
+// Override Font-Awesome Fonts Path
+//@fa-font-path: "/fonts";
+
+// Import Custom Styles
+@import "globals.less";
+
+// Import layouts
+@import "layouts/index.less";
+@import "layouts/navigation.less";
+@import "layouts/browse_venues_page.less";
+@import "layouts/venue_details_page.less";
+@import "layouts/search_page.less";
+
+#content {
+  &.animated {
+    .animation-duration(.5s) !important;
+  }
+  /*
+  &.transitions-enabled {
+    &.animated {
+      .animation-duration(.5s) !important;
+    }
+
+    & > .animated {
+      .animation-duration(.5s) !important;
+    }
+  }
+  */
+}

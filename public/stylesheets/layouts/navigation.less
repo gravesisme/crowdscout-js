@@ -1,0 +1,197 @@
+// TODO: REPLACE THESE TOUCH-SPECIFIC STYLES WITH APPROPRIATE BOOTSTRAP STYLES
+.touch {
+  #navigation {
+    .navbar-header {
+      .navbar-brand.beforeImage {
+        margin-left: 4rem;
+
+        &:before {
+          left: .75rem;
+        }
+      }
+    }
+  }
+}
+
+#navigation {
+  .navbar-header {
+    position: relative;
+
+    .navbar-brand {
+      color: @cs-color-white;
+      background: url("../images/ic_crowd_scout.png") no-repeat 0% 50% transparent;
+      background-size: contain;
+      font-size: 2.4rem;
+      padding-left: 4.75rem;
+
+      &.cursive {
+        font-family: @cs-font-indie-flower;
+        font-size: 3.4rem;
+        line-height: 2.75rem;
+      }
+
+      &.sans {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 200;
+      }
+
+      &.yellow {
+        color: @cs-color-yellow !important;
+      }
+
+      &:hover {
+        color: @cs-color-white;
+      }
+    }
+
+    .navbar-brand.beforeImage {
+      color: #fff;
+      margin-left: 3.5rem;
+      padding-left: 0;
+
+      &:hover {
+        color: @cs-color-white;
+      }
+
+      &:before {
+        content: "";
+        width: 3rem;
+        height: 3rem;
+        background-image: url("../images/ic_crowd_scout.png");
+        background-size: cover;
+        display: inline-block;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+      }
+    }
+  }
+
+  #navbar-content {
+    .search-container {
+      position: relative;
+
+      .form-search {
+        margin-right: 1rem;
+        text-align: right;
+        padding: 0;
+
+        input#search-query {
+          margin-right: 1rem;
+          width: 40rem;
+
+          & + i.fa {
+            margin: 0 0 0 -2.5rem
+          }
+        }
+      }
+
+      .search-filters-list {
+        &.dropdown-menu {
+          li {
+            display: block;
+            margin: 1rem 2rem;
+
+            & > a {
+              display: inline-block;
+              padding: 0 1rem;
+            }
+
+            &.fa-check {
+              margin: 1rem;
+
+              & > a {
+                font-weight: bold;
+                padding-left: 0.6rem;
+              }
+            }
+          }
+        }
+
+        // Collapsed Nav Styling
+        &.navbar-nav {
+          li {
+            font-size: 1.8rem;
+            line-height: 4rem;
+            padding: 0 2rem;
+            margin: 1rem 0;
+
+            &.fa-check {
+
+              &:before {
+                color: #fff;
+                font-weight: normal;
+                position: absolute;
+                left: 0.8rem;
+                top: 0;
+                z-index: -1;
+              }
+
+              & > a {
+                color: #fff;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+
+      .search-results {
+        display: block;
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        top: 4rem;
+        z-index: 100;
+        background-color: #d7d7d7;
+        border: 1px solid #666;
+        border-radius: 6px;
+        padding: 1rem 1.5rem;
+      }
+    }
+  }
+}
+
+#navigation {
+
+  #nav-search-btn {
+    min-height: 3.4rem;
+    width: 4rem;
+    margin-right: 1rem;
+
+    @media(min-width: @screen-md-min) {
+      & {
+        display: none;
+      }
+    }
+  }
+
+
+  #navbar-content {
+    // Navigation Search Input
+    .form-search.navbar-form {
+      @media(max-width: @screen-sm-max) {
+        & {
+          display: none;
+        }
+      }
+    }
+
+    // Collapsed Filters
+    .navbar-nav.search-filters-list {
+      @media(min-width: @screen-md-min) {
+        & {
+          display: none;
+        }
+      }
+
+      // Check icon should be white for collapsed mode since background is black
+      li.fa-check {
+        &:before {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,302 @@
+.VenueDetailsPage {
+  .list-container {
+    &.loading {
+      .cs-loading-icon();
+
+      // Show footer indicator in case results are appended
+      .bottomIndicator {
+        display: block;
+      }
+
+      // Hide load more button until fetch complete
+      #load-more-search-results-btn {
+        display: none;
+      }
+    }
+  }
+
+  .media-items, .tweet-items {
+    .tweetListItem {
+      margin-top: 2rem;
+    }
+
+    .mediaListItem {
+      margin-top: 3rem;
+    }
+
+    .mediaListItem, .tweetListItem {
+      padding-top: 2rem;
+      border-top: 0.1rem solid #d7d7db;
+
+      &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .mediaInfo {
+
+        &.flex-container {
+          align-content: flex-start;
+          align-items: flex-start;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+
+          .userAvatar {
+            align-self: flex-start;
+            flex: 0 1 6.4rem;
+            max-height: 6.4rem;
+          }
+
+          .metaContainer {
+            align-self: stretch;
+            flex: 3 0 auto;
+          }
+        }
+
+        .userAvatar {
+          border-radius: .6rem;
+        }
+
+        .metaContainer {
+          margin-left: 1rem;
+
+          .userName {
+            .h5;
+            margin-top: 0;
+          }
+
+          .timestamp {
+            color: #69696b;
+            font-weight: 200;
+            margin: 0.5rem 0 0 0;
+
+            &.old {
+              margin-left: 1rem;
+              padding-left: 1rem;
+              border-left: 1px solid #69696b;
+            }
+          }
+        }
+      }
+
+      .venueMedia {
+        border: 1px solid #000;
+        border-radius: .6rem;
+        margin-top: 1rem;
+        width: 100%;
+      }
+
+      .tweet-link {
+        color: #333;
+        &:hover, &:focus, &:active {
+          text-decoration: none;
+        }
+      }
+
+      .caption {
+        margin: 1rem 0 0;
+      }
+    }
+  }
+
+  .dashboard {
+
+    // Hiding this for all viewports for now. (04/09/2015)
+    //
+    // Reason: This was added when I originally planned on hiding dashboard search filters, but I decided the search
+    // filters are still useful even though they are redundant to collapsed nav, which I have found is better
+    // used after scrolling through list and search filters no longer visible.
+    .active-filter-title {
+      display: none !important;
+    }
+
+    .venueInfoCard {
+      padding: 1rem;
+
+      @media(min-width: @screen-md-min) {
+        padding: 1.4rem;
+      }
+
+      &.flex-container {
+        align-content: flex-start;
+        align-items: flex-start;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        .categoryIcon {
+          align-self: baseline;
+          flex: 0 0 3.4rem;
+          .square(3.4rem);
+
+          @media(min-width: @screen-md-min) {
+            flex: 0 0 4.8rem;
+            .square(4.8rem);
+          }
+        }
+
+        .venueInfo {
+          align-self: stretch;
+          flex: 3 1 auto;
+          margin-left: 0.6rem;
+
+          .venueName {
+            color: @gray-dark;
+            font-size: 1.4rem;
+            font-weight: 200;
+            margin: 0;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.08);
+            .text-overflow();
+          }
+
+          .categoryName {
+            color: @gray-light;
+            font-size: 1.2rem;
+            font-weight: 200;
+            margin: 0.4rem 0 0 0.1rem;
+          }
+
+          @media(min-width: @screen-sm-min) {
+            .venueName {
+              font-size: 1.2rem;
+              font-weight: 400;
+            }
+          }
+
+          @media(min-width: @screen-md-min) {
+            margin-left: 1rem;
+
+            .venueName {
+              font-size: 1.6rem;
+              font-weight: 200;
+            }
+
+            .categoryName {
+              font-size: 1.4rem;
+            }
+          }
+
+          .hereNowCount {
+            color: @brand-primary;
+            font-weight: bold;
+
+            &:before {
+              content: "";
+              .square(1.2rem);
+              background-image: url("../images/ic_here_now.png");
+              background-size: contain;
+              display: inline-block;
+              margin-left: .5rem;
+              margin-right: .5rem;
+            }
+
+            &.noLeftMargin:before {
+              margin-left: 0;
+              margin-top: .6rem;
+            }
+          }
+        }
+      }
+    }
+
+    .searchFilters {
+      .filter {
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.MediaListView {
+  #load-more-search-results-btn {
+    font-weight: 200;
+    margin: 2rem 0;
+  }
+
+  .bottomIndicator {
+    color: @cs-color-gray;
+    display: none;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    height: 2rem;
+    .cs-loading-icon();
+  }
+}
+
+.VenueDetailsPage {
+  @media(min-width: @screen-md-min) {
+    .dashboard-container {
+      .affix;
+    }
+  }
+
+  @media(max-width: @screen-sm-max) {
+    .dashboard-container, .list-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .list-container {
+      &.loading > ul {
+        border-top: 0 none;
+      }
+
+      & > ul {
+        padding-top: 2rem;
+        border-top: 1px solid #d7d7d7;
+      }
+    }
+
+    .dashboard {
+      position: relative;
+
+      .active-filter-title {
+        margin-top: 0;
+      }
+    }
+
+    .media-items, .tweet-items {
+      .mediaListItem, .tweetListItem {
+        .userAvatar {
+          flex: 0 1 4.8rem !important;
+          max-height: 4.8rem !important;
+        }
+      }
+    }
+  }
+}
+
+#navbar-content {
+  .venue-nav-filters {
+    @media (min-width: @screen-md-min) {
+      display: none;
+    }
+
+    li.venue-details-nav-filter-item {
+      font-size: 1.8rem;
+      line-height: 4rem;
+      padding: 0 2rem;
+      margin: 1rem 0;
+
+      &.fa-check {
+
+        &:before {
+          color: #fff;
+          font-weight: normal;
+          position: absolute;
+          left: 0.8rem;
+          top: 0;
+          z-index: -1;
+        }
+
+        & > a {
+          color: #fff;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

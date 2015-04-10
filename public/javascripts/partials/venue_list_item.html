@@ -1,0 +1,13 @@
+<img class="categoryIcon flex-item" src="{{ categoryIconUrl }} " />
+<div class="venueInfo flex-item">
+    <h4 class="venueName">{{ name }}</h4>
+    {[ if (categoryName) { ]}
+        {[ if (hereNowCount > 0) { ]}
+        <h5 class="categoryName">{{ categoryName }}<span class="hereNowCount">{{ hereNowCount }}</span></h5>
+        {[ } else { ]}
+        <h5 class="categoryName">{{ categoryName }}</h5>
+        {[ } ]}
+    {[ } else { ]}
+        <span class="hereNowCount noLeftMargin">{{ hereNowCount }}</span>
+    {[ } ]}
+</div>

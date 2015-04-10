@@ -1,0 +1,5 @@
+{[ if (typeof disabled !== "undefined" && disabled === true) { ]}
+<a class="venue-filter dropdown-toggle disabled hidden" role="button" data-search-type="{{ searchType }}" href="{{ link }}">{{ title }}</a>
+{[ } else { ]}
+<a class="venue-filter dropdown-toggle" role="button" data-search-type="{{ searchType }}" href="{{ link }}">{{ title }}</a>
+{[ } ]}

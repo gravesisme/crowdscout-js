@@ -1,0 +1,44 @@
+.SearchPage {
+  #search-query-form {
+    position: relative;
+
+    #search-clear-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+      color: #69696b;
+
+      &:hover, &:focus {
+        color: @cs-color-dark-gray;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .list-container {
+    ul.searchResults {
+      margin-top: 1rem;
+
+      li.searchResultListItem {
+        border-top: 1px solid #d7d7db;
+        padding: 1rem 1rem 0;
+        margin-top: 1rem;
+
+        &:first-child {
+          border-top: 0;
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+    }
+
+    &.loading {
+      .cs-loading-icon();
+
+      & > ul {
+        border: 0 none;
+      }
+    }
+  }
+}

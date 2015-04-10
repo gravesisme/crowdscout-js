@@ -1,0 +1,31 @@
+<h4 class="active-filter-title">{{ title }}</h4>
+{[ if (typeof name !== "undefined") { ]}
+<div class="venueInfoCard flex-container well">
+    <img class="categoryIcon" src="{{ categoryIconUrl }} " />
+    <div class="venueInfo">
+        <h4 class="venueName">{{ name }}</h4>
+        {[ if (typeof categoryName !== "undefined") { ]}
+        {[ if (hereNowCount > 0) { ]}
+        <h5 class="categoryName">{{ categoryName }}<span class="hereNowCount">{{ hereNowCount }}</span></h5>
+        {[ } else { ]}
+        <h5 class="categoryName">{{ categoryName }}</h5>
+        {[ } ]}
+        {[ } else if (hereNowCount > 0) { ]}
+        <span class="hereNowCount noLeftMargin">{{ hereNowCount }}</span>
+        {[ } ]}
+    </div>
+</div>
+{[ } ]}
+<div class="searchFilters list-group">
+    {[ if (typeof disableVenueFilters === "undefined") { ]}
+    <a class="list-group-item filter venue-filter" data-search-type="recent-media" href="#recent_media">Recent Media</a>
+    {[ } ]}
+    {[ if (typeof disableVenueFilters === "undefined" && typeof enableRecentTweets !== "undefined" && enableRecentTweets) { ]}
+    <a class="list-group-item filter venue-filter" data-search-type="recent-tweets" href="#recent_tweets">Recent Tweets</a>
+    {[ } ]}
+    <a class="list-group-item filter location-filter" data-search-type="nearby-media" href="#nearby_media">Nearby Media</a>
+    <a class="list-group-item filter location-filter" data-search-type="nearby-tweets" href="#nearby_tweets">Nearby Tweets</a>
+</div>
+{[ if (typeof tweets !== "undefined" && _.isArray(tweets) && tweets.length > 0) { ]}
+<ul class="recentTweets list-group"></ul>
+{[ } ]}

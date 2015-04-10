@@ -1,0 +1,6 @@
+
+{[ if (typeof section === "undefined") { ]}
+<a class="address" href="/explore/{{ addressParam }}">{{ address }}</a>
+{[ } else { ]}
+<a class="address" href="/explore/{{ addressParam }}/{{ section }}">{{ address }}</a>
+{[ } ]}

@@ -1,0 +1,10 @@
+<div class="mediaInfo flex-container">
+    <img class="userAvatar flex-item" src="{{ userImgUrl }}" />
+    <div class="metaContainer flex-item">
+        <a class="userName" href="https://twitter.com/{{ username }}" target="_blank">{{ username }}</a>
+        <h6 class="timestamp">{{ timestamp }}</h6>
+    </div>
+</div>
+{[ if (typeof text !== "undefined") { ]}
+<a href="https://twitter.com/{{ username }}/status/{{ id_str }}" class="tweet-link" target="_blank"><p class="caption">{{ text }}</p></a>
+{[ } ]}

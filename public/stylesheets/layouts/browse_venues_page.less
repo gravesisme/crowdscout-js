@@ -1,0 +1,391 @@
+.BrowseVenuesPage {
+  .list-container {
+    &.loading {
+      .cs-loading-icon();
+
+      & > ul {
+        border: 0 none;
+      }
+    }
+  }
+
+  .searchOptions {
+    .locations {
+      margin-top: 0;
+    }
+
+    .filters {
+      margin-top: 1rem;
+    }
+  }
+
+  @media(min-width: @screen-sm-min) {
+    .searchOptions {
+
+      .filters-container {
+        padding-left: 0;
+
+        .filters {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .venue-items {
+    margin-top: 1rem;
+
+    &.solid_bg {
+      background: @gray-lighter;
+      border-radius: .4rem;
+      border: .1rem solid #d7d7db;
+    }
+  }
+
+  .venueListItem {
+    &.flex-container {
+      align-content: flex-start;
+      align-items: flex-start;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+
+      .categoryIcon {
+        align-self: baseline;
+        flex: 0 0 4.8rem;
+        .square(4.8rem);
+      }
+
+      .venueInfo {
+        align-self: stretch;
+        flex: 3 1 auto;
+      }
+    }
+  }
+
+  .venueListItem {
+    cursor: pointer;
+    padding: 1rem;
+    border-top: 0.1rem solid #d7d7df;
+
+    &.container-abs {
+      position: relative;
+      // top margin + icon height + bottom margin
+      height: (1rem + 4.8rem + 1rem);
+
+      .categoryIcon {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+      }
+
+      .venueInfo {
+        position: absolute;
+        left: (1rem + 4.8rem);
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+
+    &:first-child {
+      border-top: 0px;
+    }
+
+    &:active {
+      background: #d7d7d7 !important;
+    }
+
+    &:hover {
+      background: #fff;
+    }
+
+    .categoryIcon {
+      .square(4.8rem);
+    }
+
+    .venueInfo {
+      margin-left: 0.6rem;
+      margin-top: 0.2rem;
+
+      .venueName {
+        color: @gray-dark;
+        font-weight: bold;
+        margin: 0;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.08);
+        .text-overflow();
+      }
+      .categoryName {
+        color: @gray-light;
+        margin: 0.4rem 0 0 0.1rem;
+      }
+      .hereNowCount {
+        color: @brand-primary;
+        font-weight: bold;
+
+        &:before {
+          content: "";
+          .square(1.2rem);
+          background-image: url("../images/ic_here_now.png");
+          background-size: contain;
+          display: inline-block;
+          margin-left: .5rem;
+          margin-right: .5rem;
+        }
+
+        &.noLeftMargin:before {
+          margin-left: 0;
+          margin-top: .6rem;
+        }
+      }
+    }
+  }
+
+  .browseVenuesHeader {
+    // Don't show address header for screen sizes that will be using navigation search
+    @media(min-width: @screen-md-min) {
+      .address {
+        display: none;
+      }
+    }
+
+    .address {
+      margin-top: 0;
+    }
+
+    .well {
+      background: url('../images/filters/trending.jpg') no-repeat 50% 50% transparent;
+      background-size: cover;
+      height: 10rem;
+      margin-bottom: .2rem;
+      position: relative;
+      padding: 0;
+      border: 1px solid #777;
+
+      .section {
+        padding: 0.5rem 1rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        background-color: rgba(0,0,0,0.6);
+        border: 1px solid #000;
+        border-radius: 6px;
+        margin: 0;
+        color: #fff;
+        //font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+// OLD PULSE STYLES
+
+.icon {
+  background-size: contain;
+  content: "";
+  height: 7.5rem;
+  left: 0rem;
+  position: absolute;
+  top: 0rem;
+  width: 6.25rem;
+  z-index: 9999;
+}
+
+.weather_conditions {
+  -webkit-border-radius: 8px;
+  -webkit-transition: opacity .5s linear;
+  -webkit-transform: scale3d(0.7, 0.7, 0.0);
+  -webkit-transform-origin: 100% 0%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0 none;
+
+  display: none;
+  opacity: 0;
+
+  height: 8rem;
+  top: 0.75rem;
+  position: absolute;
+  z-index: 9999;
+
+  .forecast {
+    margin-left: 7rem;
+    margin-right: .5rem;
+
+    .temperature {
+      color: #fff;
+      font-size: 4rem;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top: 1rem;
+    }
+
+    .summary {
+      color: #fff;
+      display: none;
+      margin: 0;
+    }
+  }
+
+  &.sunny {
+    &:before {
+      .icon;
+      background: url("../images/weather/sunny.png") no-repeat 0 50% transparent;
+    }
+  }
+  &.rain {
+    &:before {
+      .icon;
+      background: url("../images/weather/rain.png") no-repeat 0 50% transparent;
+    }
+  }
+  &.snow {
+    &:before {
+      .icon;
+      background: url("../images/weather/snow.png") no-repeat 0 50% transparent;
+    }
+  }
+  &.windy {
+    &:before {
+      .icon;
+      background: url("../images/weather/windy.png") no-repeat 0 50% transparent;
+    }
+  }
+  &.cloudy {
+    &:before {
+      .icon;
+      background: url("../images/weather/cloudy.png") no-repeat 0 50% transparent;
+    }
+  }
+  &.fog {
+    &:before {
+      .icon;
+      background: url("../images/weather/fog.png") no-repeat 0 50% transparent;
+    }
+  }
+  &.partly_cloudy {
+    &:before {
+      .icon;
+      background: url("../images/weather/partly_cloudy.png") no-repeat 0 50% transparent;
+    }
+  }
+}
+
+.location_filters {
+  -moz-box-shadow: 0px 3px 3px 0px #d7d7d7;
+  -webkit-box-shadow: 0px 3px 3px 0px #d7d7d7;
+  box-shadow: 0px 3px 3px 0px #d7d7d7;
+  height: 7rem;
+  position: relative;
+
+  .scrollContainer {
+    display: inline-block;
+    white-space: nowrap;
+
+    .filter {
+      background-color: #fff;
+      background-size: cover;
+      display: inline-block;
+      height: 7rem;
+      position: relative;
+
+      .label {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 8px 8px 8px 8px;
+        bottom: 5px;
+        color: #fff;
+        font-size: 2.6rem;
+        font-weight: normal;
+        height: 2.6rem;
+        left: 5px;
+        line-height: 2.6rem;
+        margin: 0;
+        padding: 0.5rem .75rem;
+        position: absolute;
+        text-transform: lowercase;
+      }
+
+      &.arts {
+        //.filter-image("arts");
+        background-image: url("../images/filters/arts.jpg");
+      }
+
+      &.coffee {
+        //.filter-image("coffee");
+        background-image: url("../images/filters/coffee.jpg");
+      }
+
+      &.drinks {
+        //.filter-image("drinks");
+        background-image: url("../images/filters/drinks.jpg");
+      }
+
+      &.drinks2 {
+        //.filter-image("drinks2");
+        background-image: url("../images/filters/drinks2.jpg");
+      }
+
+      &.drinks3 {
+        //.filter-image("drinks3");
+        background-image: url("../images/filters/drinks3.jpg");
+      }
+
+      &.drinks4 {
+        //.filter-image("drinks4");
+        background-image: url("../images/filters/drinks4.jpg");
+      }
+
+      &.food {
+        //.filter-image("food");
+        background-image: url("../images/filters/food.jpg");
+      }
+
+      &.outdoors {
+        //.filter-image("outdoors");
+        background-image: url("../images/filters/outdoors.jpg");
+      }
+
+      &.shops {
+        //.filter-image("shops");
+        background-image: url("../images/filters/shops.jpg");
+      }
+
+      &.sights {
+        //.filter-image("sights");
+        background-image: url("../images/filters/sights.jpg");
+      }
+
+      &.trending {
+        //.filter-image("trending");
+        background-image: url("../images/filters/trending.jpg");
+      }
+
+      &.trending2 {
+        //.filter-image("trending2");
+        background-image: url("../images/filters/trending2.jpg");
+      }
+
+      &.trending3 {
+        //.filter-image("trending3");
+        background-image: url("../images/filters/trending3.jpg");
+      }
+
+      &.trending4 {
+        //.filter-image("trending4");
+        background-image: url("../images/filters/trending4.jpg");
+      }
+    }
+  }
+}
+
+// Too many false-triggers in mobile means we cannot rely on ':active' selector
+// and must instead manually add a 'selected' class to the clicked venue list item
+.touch {
+  .BrowseVenuesPage {
+    .venueListItem {
+      &:active, &:hover {
+        background: transparent !important
+      }
+      &.selected {
+        background: #d7d7d7 !important;
+      }
+    }
+  }
+}

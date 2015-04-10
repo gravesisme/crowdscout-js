@@ -1,0 +1,19 @@
+<div class="mediaInfo flex-container">
+    <img class="userAvatar flex-item" src="{{ userImgUrl }}" />
+    <div class="metaContainer flex-item">
+        <a class="userName" href="https://instagram.com/{{ username }}" target="_blank">{{ username }}</a>
+        <h6 class="timestamp">{{ timestamp }}</h6>
+    </div>
+</div>
+{[ if (typeof caption !== "undefined") { ]}
+<p class="caption">{{ caption.text }}</p>
+{[ } ]}
+{[ if (typeof isVideo === "undefined" || !isVideo) { ]}
+<a href="{{ link }}" target="_blank">
+    <img class="venueMedia img-responsive center-block" src="{{ imageUrl }}" style="max-width: {{ maxWidth }}px;" />
+</a>
+{[ } else { ]}
+<video class="venueMedia video img-responsive center-block" poster="{{ imageUrl }}" controls>
+    <source src="{{ videoUrl }}" type="video/mp4" />
+</video>
+{[ } ]}

@@ -1,0 +1,34 @@
+{
+    "foursquare": {
+        "explore_near_address": "/foursquare/explore/near/%s",
+        "explore_near_location": "/foursquare/explore/near/%f/%f",
+        "trending_near_address": "/foursquare/trending/near/%s",
+        "trending_near_location": "/foursquare/trending/near/%f/%f",
+        "autocomplete_near_address": "/foursquare/autocomplete/near/%s",
+        "autocomplete_near_location": "/foursquare/autocomplete/near/%f/%f",
+        "recent_venue_media": "/foursquare/venues/%s/instagram/media"
+    },
+    "instagram": {
+        "media_near_address": "/instagram/media/near/%s",
+        "media_near_location": "/instagram/media/near/%f/%f"
+    },
+    "twitter": {
+        "tweets_near_address": "/twitter/tweets/near/%s",
+        "tweets_near_location": "/twitter/tweets/near/%f/%f",
+        "user_tweets": "/twitter/tweets/user/@%s"
+    },
+    "forecast": {
+        "forecast_near_address": "/forecast/%s",
+        "forecast_near_location": "/forecast/%f/%f"
+    },
+    "geocoder": {
+        "autocomplete": "/geocoder/autocomplete/%s",
+        "lookup_address": "/geocoder/lookup/%s"
+    },
+    "web": {
+        "": "index",
+        "explore/*path": "explore",
+        "venues/:venueId": "venueDetails",
+        "search": "search"
+    }
+}

@@ -1,0 +1,28 @@
+<form class="form-search navbar-form">
+    <div class="input-group">
+        <input type="text" id="search-query" class="search form-control" placeholder="{{ placeholder }}" value="{{ address }}" />
+        <i class="fa fa-search indicator"></i>
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ section }} <span class="caret"></span></button>
+            <ul class="dropdown-menu search-filters-list" role="menu">
+                <li class="fa {{ equalsIgnoreCase('trending', section) ? 'fa-check' : '' }}"><a data-search-type="trending" href="/explore/{{ addressParam }}/trending" class="search-filter">trending</a></li>
+                <li class="divider"></li>
+                <li class="fa {{ equalsIgnoreCase('drinks', section) ? 'fa-check' : '' }}"><a data-search-type="drinks" href="/explore/{{ addressParam }}/drinks" class="search-filter">drinks</a></li>
+                <li class="fa {{ equalsIgnoreCase('food', section) ? 'fa-check' : '' }}"><a data-search-type="food" href="/explore/{{ addressParam }}/food" class="search-filter">food</a></li>
+                <li class="fa {{ equalsIgnoreCase('outdoors', section) ? 'fa-check' : '' }}"><a data-search-type="outdoors" href="/explore/{{ addressParam }}/outdoors" class="search-filter">outdoors</a></li>
+                <li class="fa {{ equalsIgnoreCase('sights', section) ? 'fa-check' : '' }}"><a data-search-type="sights" href="/explore/{{ addressParam }}/sights" class="search-filter">sights</a></li>
+                <li class="fa {{ equalsIgnoreCase('arts', section) ? 'fa-check' : '' }}"><a data-search-type="arts" href="/explore/{{ addressParam }}/arts" class="search-filter">arts</a></li>
+            </ul>
+        </span>
+        <ul class="search-results"></ul>
+    </div>
+    <button type="submit" class="btn btn-default glyphicon glyphicon-search hidden" />
+</form>
+<ul class="nav navbar-nav search-filters-list">
+    <li class="fa {{ equalsIgnoreCase('trending', section) ? 'fa-check' : '' }}"><a role="button" data-search-type="trending" href="/explore/{{ addressParam }}/trending" class="search-filter dropdown-toggle">trending</a></li>
+    <li class="fa {{ equalsIgnoreCase('drinks', section) ? 'fa-check' : '' }}"><a role="button" data-search-type="drinks" data-toggle="collapse" data-target="#navbar-content" href="/explore/{{ addressParam }}/drinks" class="search-filter dropdown-toggle">drinks</a></li>
+    <li class="fa {{ equalsIgnoreCase('food', section) ? 'fa-check' : '' }}"><a role="button" data-search-type="food" data-toggle="collapse" data-target="#navbar-content" href="/explore/{{ addressParam }}/food" class="search-filter dropdown-toggle">food</a></li>
+    <li class="fa {{ equalsIgnoreCase('outdoors', section) ? 'fa-check' : '' }}"><a role="button" data-search-type="outdoors" data-toggle="collapse" data-target="#navbar-content" href="/explore/{{ addressParam }}/outdoors" class="search-filter dropdown-toggle">outdoors</a></li>
+    <li class="fa {{ equalsIgnoreCase('sights', section) ? 'fa-check' : '' }}"><a role="button" data-search-type="sights" data-toggle="collapse" data-target="#navbar-content" href="/explore/{{ addressParam }}/sights" class="search-filter dropdown-toggle">sights</a></li>
+    <li class="fa {{ equalsIgnoreCase('arts', section) ? 'fa-check' : '' }}"><a role="button" data-search-type="arts" data-toggle="collapse" data-target="#navbar-content" href="/explore/{{ addressParam }}/arts" class="search-filter dropdown-toggle">arts</a></li>
+</ul>
